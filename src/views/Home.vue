@@ -3,7 +3,7 @@
        <img src="@/assets/head_bg2.png" >
         <div class="main">
             <div class="contents">
-                <span id="update-time"> Last update: &emsp; <b>{{ stats.updateTime }}</b></span>
+                <span id="update-time"><b>{{ stats.updateTime }}</b></span>
                 <div class="cards">
                     <v-card id="confirm-cases" width="23vw" flat style="border-radius: 5px 0 0 5px">
                     <v-card-text>
@@ -16,7 +16,7 @@
                 </v-card>
                     <v-card id="prob-cases" width="22vw" flat>
                         <v-card-text>
-                            <div class="mini">New: <inc>{{stats.ProbableCases.Yesterrday >=0? '+' + stats.ProbableCases.Yesterrday : '-' + stats.ProbableCases.Yesterrday}}</inc></div>
+                            <div class="mini">New: <inc>{{stats.ProbableCases.Yesterday >=0? '+' + stats.ProbableCases.Yesterday : '-' + stats.ProbableCases.Yesterday}}</inc></div>
                                 <b id="current-prob">
                                     {{stats.ProbableCases.Current}}<br>
                                 </b>
@@ -42,19 +42,35 @@
                         </v-card-text>
                     </v-card>
                 </div>
-
                 <div class="charts">
-                    <div ref="newChart" style="width: 93vw; height: 36vh; min-height: 240px;"/>
+                    <div ref="newChart" style="width: 93vw; height: 38vh; min-height: 240px;"/>
                     <div ref="totalChart" style="width: 93vw; height: 40vh; min-height: 300px;"/>
-                    <div id="bar" ref="byRegion" style="width: 100vw; height: 70vh; min-height: 570px;"/>
-                    <span>
+                    <div id="bar" ref="byRegion" style="width: 100vw; height: 65vh; min-height: 550px;"/>
+                    <span style="z-index: 1">
                     Data source:
                     <a href="https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-cases/covid-19-current-cases-details" >
                     Ministry of Health.
                     </a>
-                </span>
+                    </span>
+                </div>
+                <div class="world-stats">
+<!--                    <p><b>World Now:</b></p>-->
+<!--                    <iframe src="https://www.youtube.com/embed/qgylp3Td1Bw"-->
+<!--                            frameborder="0"-->
+<!--                            allow="accelerometer;-->
+<!--                            autoplay; encrypted-media;-->
+<!--                            gyroscope; fullscreen;"-->
+<!--                            ></iframe>-->
+<!--                    <p><em>Credit to: Roylab Stats</em></p>-->
+
+                    <a href="https://covid19.govt.nz/">
+                        <v-card id="unite">
+                            <img src="../assets/lockup.svg" alt="Unite logo">
+                        </v-card>
+                    </a>
                 </div>
             </div>
+
             <div class="footer">
                 <p>© <a href="http://www.mytimerec.com/">TIMEREC</a> LIMITED 2020</p>
             </div>
@@ -136,9 +152,9 @@
                     tooltip: {
                         trigger: 'axis'
                     },
-                    // legend: {
-                    //     data: ['Confirmed', 'Recovered']
-                    // },
+                    legend: {
+                        data: ['Confirmed', 'Recovered']
+                    },
                     xAxis: {
                         type: 'category',
                         boundaryGap: false,
@@ -147,24 +163,23 @@
                     },
                     yAxis: {
                         type: 'value',
-                        max: 80,
                         splitLine: {show: true},
                     },
                     series:
-                    // [
+                    [
                         {
                             name: 'Confirmed',
                             type: 'line',
                             data: this.dailyNew.valueList,
                         },
-                        // {
-                        //     name: 'Recovered',
-                        //     type: 'bar',
-                        //     data: this.recover.valueList,
-                        // }
-                    // ],
+                        {
+                            name: 'Recovered',
+                            type: 'bar',
+                            data: this.recover.valueList,
+                        }
+                    ],
                     color:
-                        // [
+                        [
                         {
                         type: 'linear',
                         x: 0,
@@ -178,7 +193,7 @@
                         }],
                         global: false // 缺省为 false
                     }
-                    // , '#90EE90']
+                    , '#90EE90']
                 })
             },
 
@@ -202,7 +217,6 @@
                     },
                     yAxis: {
                         type: 'value',
-                        max: 300,
                         splitLine: {show: true},
                     },
                     series:
@@ -234,8 +248,8 @@
                 this.regionsChart.setOption({
                     title: {
                         left: 'center',
-                        text: 'Confirmed Cases by Region',
-                        subtext: 'Updated: ' + this.stats.regionUpdate
+                        text: 'Total Cases by Region',
+                        subtext: this.stats.regionUpdate
                     },
                     grid: {containLabel: true},
                     xAxis: {show: false},
@@ -332,7 +346,7 @@
                     margin-top: 15px;
 
                     .v-card{
-                        margin-right: 1px;
+                        margin-right: 0.45vw;
                         border-radius: 0;
                     }
                     .v-card__text{
@@ -381,6 +395,28 @@
                     margin-top: 30px;
                     #bar{
                         margin-left: -25px;
+                        padding-bottom: -15px;
+                    }
+                }
+
+                .world-stats{
+                    margin-top: 20px;
+                    width: 90vw;
+                    height: 30vh;
+                /*    iframe{*/
+                /*        height: 30vh;*/
+                /*        width: 90vw;*/
+                /*        max-height: 1360px;*/
+                /*        max-width: 1024px;*/
+                /*    }*/
+                    #unite{
+                        background-image: url("../assets/stripes.svg");
+                        width: 100%;
+                        height: 100%;
+                        img{
+                            width: 50vw;
+                            height: 30vh;
+                        }
                     }
                 }
             }

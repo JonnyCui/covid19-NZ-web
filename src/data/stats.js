@@ -1,23 +1,26 @@
 export default {
-    updateTime: '1:10 pm, 26 March 2020',
-    regionUpdate: '1:42 pm 26 March 2020',
+    updateTime: ' As at 9:00 am, 29 March 2020',
+    regionUpdate: 'As at 9:00 am, 29 March 2020',
     confirmCases:{
-        Current: 189+73,
-        Yesterday: 73
+        Current: 476,
+        Yesterday: 60
     },
     ProbableCases:{
-        Current: 21,
-        Yesterrday: 5
+        Current: 38,
+        Yesterday: 3
     },
     totalRecovered:{
-        Current: 27,
-        Yesterday:5
+        Current: 56,
+        Yesterday:6
     },
     totalDeaths:{
-        Current: 0,
-        Yesterday: 0
+        Current: 1,
+        Yesterday: 1
     },
     dailyNew:{
+        "29 Mar": 60,
+        "28 Mar": 78,
+        "27 Mar": 76,
         "26 Mar": 73,
         "25 Mar": 47,
         "24 Mar": 40,
@@ -44,6 +47,9 @@ export default {
         "28 Feb": 1,
     },
     dailyTotal: {
+        "29 Mar": 514,
+        "28 Mar": 451,
+        "27 Mar": 368,
         "26 Mar": 283,
         "25 Mar": 205,
         "24 Mar": 155,
@@ -70,7 +76,10 @@ export default {
         "28 Feb": 1,
     },
     dailyRecovered:{
-        "26 Mar": 27,
+        "29 Mar": 6,
+        "28 Mar": 13,
+        "27 Mar": 10,
+        "26 Mar": 5,
         "25 Mar": 10,
         "24 Mar": 12,
         "23 Mar": 0,
@@ -95,52 +104,29 @@ export default {
         "04 Mar": 0,
         "28 Feb": null,
     },
+    dailyDeath:{
+        "29 Mar": 1,
+    },
     byRegion:{
-        "Auckland": 43,
-        "Capital and Coast": 35,
-        "Waikato": 31,
-        "Southern": 30,
-        "Waitemata": 29,
-        "Counties Manukau": 23,
-        "Canterbury": 17,
-        "Nelson Malborough": 16,
-        "Lakes": 6,
-        "Hutt Valley": 5,
-        "MidCentral": 5,
-        "Taranaki": 5,
+        "Auckland": 75,
+        "Southern": 70,
+        "Waitemata": 64,
+        "Waikato": 63,
+        "Capital and Coast": 49,
+        "Canterbury": 46,
+        "Counties Manukau": 38,
+        "Nelson Malborough": 19,
+        "Hutt Valley": 13,
+        "Hawke's Bay": 12,
+        "Bay of Plenty": 12,
+        "Taranaki": 11,
+        "MidCentral": 10,
+        "Lakes": 8,
+        "Northland": 7,
+        "South Canterbury": 5,
         "Wairarapa": 5,
-        "Bay of Plenty": 3,
-        "Hawke's Bay": 3,
-        "Northland": 3,
-        "South Canterbury": 2,
-        "West Coast": 1
-        // "Wellington": 22+12,
-        // "Dunedin": 8+2,
-        // "Waikato": 10,
-        // "Canterbury": 5+2,
-        // "Nelson": 5,
-        // "Christchurch": 2+3,
-        // "Marlborough": 4+1,
-        // "Hamilton": 1+3,
-        // "Taranaki": 4,
-        // "Waitemata": 1+3,
-        // "Hawke's Bay": 3,
-        // "Manawatu": 3,
-        // "Bay of Plenty": 1+1,
-        // "Northland": 2,
-        // "Otago": 2,
-        // "Queenstown": 1+1,
-        // "Southern DHB": 2,
-        // "Wairarapa": 2,
-        // "Invercargill": 1,
-        // "Kapiti Coast": 1,
-        // "New Plymouth": 1,
-        // "Rotorua": 1,
-        // "Tasman": 1,
-        // "Taupo": 1,
-        // "Upper Hutt": 1,
-        // "Waitaki": 1,
-        // "Wanaka" : 0+1,
-        // "TBA": 78
+        "West Coast": 3,
+        "Whanganui": 3,
+        "Tairawhiti":1,
     }
 }
