@@ -1,5 +1,5 @@
 # covid19-NZ-Web
-- Tracking New Zealand covid19 statistics
+ Tracking New Zealand covid19 statistics
 
 ## Project setup
 ```
